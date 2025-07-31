@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title src="./370373613_797782092353396_2662639367024582765_n.jpg">GINIE DES EAUX - Premium Agriculture & Irrigation Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2e8b57;
+            --secondary-green: #3cb371;
+            --accent-blue: #41a441;
+            --accent-purple: #8a51b7;
+            --dark-bg: #1a1a1a;
+            --light-bg: #f8f9fa;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, var(--secondary-green), var(--primary-green));
+        }
+
+        /* Enhanced Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        
+        #logo-img{
+            width: 70px;
+            height: 70px;
+        }
+        .logo{
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #1a1a1a;
+            font-size:x-large;
+            font-weight: bold;
+
+            
+        }
+        
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 50%, var(--primary-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            background-image: url("./gros-plan-de-feuilles-vertes-couvertes-de-gouttes-de-rosee.jpg");
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50" cy="50" r="50"><stop offset="0" stop-color="rgba(255,255,255,0.1)"/><stop offset="1" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="10" cy="10" r="1" fill="url(%23a)"/><circle cx="30" cy="5" r="1" fill="url(%23a)"/><circle cx="60" cy="15" r="1" fill="url(%23a)"/><circle cx="80" cy="10" r="1" fill="url(%23a)"/></svg>');
+            opacity: 0.3;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: particleFloat 15s linear infinite;
+        }
+
+        .hero-content {
+            z-index: 50;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            opacity: 0;
+            animation: slideInUp 1s ease-out 0.5s forwards;
+        }
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: slideInUp 1s ease-out 0.9s forwards;
+        }
+
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+        
+
+        
+
+        
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: slideInUp 1s ease-out 1.1s forwards;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            box-shadow: var(--shadow-light);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(46, 139, 87, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: var(--shadow-light);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Enhanced Services Section */
+        .services {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, var(--light-bg) 100%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(46, 139, 87, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(46, 139, 87, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary-green);
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .service-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .service-feature::before {
+            content: '✓';
+            color: var(--secondary-green);
+            font-weight: bold;
+        }
+
+        /* Products Showcase */
+        .products {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #2a2a2a 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .products::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><circle cx="10" cy="10" r="0.5" fill="rgba(46,139,87,0.1)"/><circle cx="90" cy="5" r="0.5" fill="rgba(60,179,113,0.1)"/><circle cx="50" cy="15" r="0.5" fill="rgba(46,139,87,0.1)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(46,139,87,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: all 0.6s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .product-card:hover {
+            transform: scale(1.05) translateY(-10px);
+            border-color: var(--secondary-green);
+            box-shadow: 0 25px 50px rgba(46, 139, 87, 0.3);
+        }
+
+        .product-card:hover::after {
+            width: 400px;
+            height: 400px;
+        }
+
+        .product-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-card p {
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary-green);
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            color: var(--primary-green);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Enhanced Stats Section */
+        .stats {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><polygon points="0,20 30,0 70,0 100,20" fill="rgba(255,255,255,0.05)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-item {
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            background: linear-gradient(45deg, #fff, #f0f8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* Enhanced Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-info {
+            padding: 2rem;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+
+        .contact-detail:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .contact-detail-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--secondary-green));
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #2a2a2a 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><circle cx="10" cy="10" r="0.5" fill="rgba(46,139,87,0.1)"/><circle cx="90" cy="5" r="0.5" fill="rgba(60,179,113,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary-green);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-green);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--glass-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--secondary-green);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Loading Animation */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }.about {
+            padding: 6rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-content h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        .about-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-image {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        .imagepro {
+            width: 300px;
+            height: 300px;
+            transition: transform 0.5s ease;
+            border-radius: 20px;
+        }
+        
+        
+        
+        .imagepro:hover {
+            transform: scale(1.03);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><img id="logo-img" src="./370373613_797782092353396_2662639367024582765_n.jpg" alt="">GROUPE GENIE DES EAUX </a>
+
+            <ul class="nav-links">
+                <li><a href="#home" data-i18n="home">Maison</a></li>
+                <li><a href="#services"data-i18n="Services">Services</a></li>
+                <li><a href="#products"data-i18n="Products">Produits</a></li>
+                <li><a href=""data-i18n="shop">boutique</a></li>
+                <li><a href="#testimonials"data-i18n="Reviews">Avis</a></li>
+                <li><a href="#contact"data-i18n="Contact">Contact</a></li>
+                
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        
+        <div class="hero-particles" id="heroParticles"></div>
+        <div class="hero-content">
+            
+            <div class="hc">
+                <h1 data-i18n="Transform">Transformez votre ferme grâce à l'irrigation intelligente</h1>
+                <p class="hero-subtitle"data-i18n="Advanced">L'argriculture irriguée doit produire plus de nourriture pour assurer la sécurite alimentaire dans l'algérie, mais en utilisant moins d'eau et moins de fonds. Ce défi nous impose à nous, acteurs de l'irrigation, de nous impliquer activement dans la gestion globale de l'eau </p>
+                
+                
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Obtenez une consultation gratuite</span>
+                        <span>→</span>
+                    </a>
+                    <a href="#products" class="btn btn-secondary">
+                        <span>Voir les produits</span>
+                        <span>🔍</span>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        
+    </section>
+    <section class="about" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content slide-in-left">
+                        <h3>À propos du GROUPE GENIE DES EAUX</h3>
+                        <p>Fondé en 2013,        
+                        le GROUPE GENIE DES EAUX réalise des installations complètes (pompes,filtration ,rèseaux,équipements,programateur,bassin en géomembrane....)adabtées aux besoins de chaque exploitant gràce à une équipe de techniciens expérimentés disposant de tous les moyens techniques nécessaire. </p>
+                        <p></p>
+                        <p></p>
+                        <a href="./about.html" class="btn btn-primary">En savoir plus</a>
+                    </div>
+                    <div class="about-image slide-in-right">
+                        <img src="./images (1).jfif" alt="Team at work">
+                    </div>
+                </div
+            </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Solutions agricoles complètes</h2>
+                <p class="section-subtitle">De la conception d'irrigation personnalisée à l'automatisation complète de la ferme, nous fournissons des solutions de bout en bout pour l'agriculture moderne</p>
+            </div>
+            
+            <div class="services-grid">
+                
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Bassin et infrastructures</h3>
+                    <p>Construction professionnelle de bassins d'irrigation, de réservoirs d'eau, de stations de pompage et d'infrastructures complètes de gestion de l'eau.</p>
+                    <div class="service-features">
+                        <div class="service-feature">Conception de bassin sur mesure</div>
+                        <div class="service-feature">Systèmes de revêtement imperméables</div>
+                        <div class="service-feature">Construction d'une station de pompage</div>
+                        <div class="service-feature">Systèmes de filtration</div>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🔧</div>
+                    <h3>Outils et équipements haut de gamme</h3>
+                    <p>Outils, machines et équipements agricoles de haute qualité provenant des principaux fabricants pour améliorer la productivité et l'efficacité des exploitations agricoles.</p>
+                    <div class="service-features">
+                        <div class="service-feature">Outils de qualité professionnelle</div>
+                        <div class="service-feature">Consultation en machines</div>
+                        <div class="service-feature">Financement d'équipement</div>
+                        <div class="service-feature">Programmes de formation</div>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Maintenance & Support</h3>
+                    <p>Services de maintenance complets, assistance technique 24h/24 et 7j/7 et optimisation du système pour garantir des performances optimales tout au long de l'année.</p>
+                    <div class="service-features">
+                        <div class="service-feature">Maintenance préventive</div>
+                        <div class="service-feature">Réparations d'urgence</div>
+                        <div class="service-feature">Mises à niveau du système</div>
+                        <div class="service-feature">Optimisation des performances</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title" style="color: white;">produit haut de gamme</h2>
+                <p class="section-subtitle" style="color: #ccc;">produit agriculteurs et de hidrolique</p>
+            </div>
+            <div class="products-grid">
+                <img class="imagepro" src="./unnamed.jpg" alt="">
+                <img class="imagepro" src="./1000001093.jpg" alt="">
+                <img class="imagepro" src="./1000001094.jpg" alt="">
+                <img class="imagepro" src="./unnamed (1).jpg" alt="">
+            </div>
+            
+           
+        </div>
+            
+            
+        
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Ce que disent nos agriculteurs</h2>
+                <p class="section-subtitle">Résultats réels de vrais agriculteurs qui ont transformé leurs opérations avec SARL EHC</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">Le système d'irrigation intelligent de SARL EHC a augmenté le rendement de mes cultures de 35 % tout en réduisant ma consommation d'eau de 40 %. Le retour sur investissement a été incroyable : il a été rentabilisé en une seule saison !</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div class="author-info">
+                            <h4>Mohammed Jilali</h4>
+                            <span>Ferme de blé et d'orge, 150 hectares</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">La construction du bassin et le système de pompage automatisé ont transformé l'ensemble de nos activités. Plus besoin d'arrosage manuel ni de soucis liés au stress des cultures pendant les journées chaudes.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SA</div>
+                        <div class="author-info">
+                            <h4>Sarah Amara</h4>
+                            <span>Ferme maraîchère, 80 hectares</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">« Un service professionnel du début à la fin. L'équipe a parfaitement compris nos besoins et a proposé une solution qui a dépassé nos attentes. Je recommande vivement ! »</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">KB</div>
+                        <div class="author-info">
+                            <h4>Karim Benali</h4>
+                            <span>Agrumes, 200 hectares</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Enhanced Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Prêt à transformer votre ferme ?</h2>
+                <p class="section-subtitle">Obtenez une consultation gratuite et un devis personnalisé pour vos besoins d'irrigation agricole</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info slide-in-left">
+                    <h3>Discutons de votre projet</h3>
+                    <p>Nos experts agricoles sont là pour vous aider à concevoir la solution d'irrigation idéale pour votre exploitation. Contactez-nous dès aujourd'hui pour une évaluation complète.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">📍</div>
+                            <div>
+                                <strong>Visitez notre salle d'exposition</strong>
+                                <p></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">📞</div>
+                            <div>
+                                <strong>Appelez-nous aujourd'hui</strong>
+                                <p>+213 559 37 35 21</p>
+                                <p>+213 770 47 97 98</p>
+                                <p>+213 660 34 94 98</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">📧</div>
+                            <div>
+                                <strong>Envoyez-nous un e-mail</strong>
+                                <p>info@agroflow.dz</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-detail-icon">⏰</div>
+                            <div>
+                                <strong>Heures d'ouverture</strong>
+                                <p>Dim-Jeu : 8h-17h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form slide-in-right" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Prénom</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Nom de famille</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Adresse e-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Numéro de téléphone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="farmSize">Taille de la ferme</label>
+                            <select id="farmSize" name="farmSize">
+                                <option value="">Sélectionnez la taille de la ferme</option>
+                                <option value="small">Petit (< 10 hectares)</option>
+                                <option value="medium">Moyenne (10-50 hectares)</option>
+                                <option value="large">Grande (50-200 hectares)</option>
+                                <option value="enterprise">Enterprise (200+ hectares)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cropType">Culture primaire</label>
+                            <select id="cropType" name="cropType">
+                                <option value="">
+Sélectionnez le type de culture</option>
+                                <option value="cereals">Cereals (Wheat, Barley, Oats)</option>
+                                <option value="vegetables">Vegetables</option>
+                                <option value="fruits">Fruits & Citrus</option>
+                                <option value="olives">Olive Groves</option>
+                                <option value="mixed">Mixed Crops</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Intérêt du service</label>
+                        <select id="service" name="service">
+                            <option value="">Quel service vous intéresse ?</option>
+                            <option value="irrigation">Systèmes d'irrigation intelligents</option>
+                            <option value="basins">Construction du bassin</option>
+                            <option value="tools">Outils et équipements agricoles</option>
+                            <option value="maintenance">Maintenance et support</option>
+                            <option value="consultation">Consultation gratuite</option>
+                            <option value="multiple">Services multiples</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Détails du projet</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Parlez-nous de vos besoins en irrigation, des défis actuels et des objectifs de votre projet..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <span>Envoyer un message et obtenir un devis gratuit</span>
+                        <span>📧</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌱 GINIE des EAUX</h3>
+                    <p>Fournisseur leader de solutions d'irrigation agricole intelligentes en Algérie. Depuis 2007, nous transformons les exploitations agricoles grâce à des technologies innovantes et un savoir-faire artisanal.</p>
+                    <div class="social-links">
+                        
+                        <a href="#" aria-label="GitHub"><i class="social-link"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="social-link"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="social-link"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <p><a href="#services">Smart Irrigation Systems</a></p>
+                    <p><a href="#services">Basin Construction</a></p>
+                    <p><a href="#services">Agricultural Tools</a></p>
+                    <p><a href="#services">Maintenance & Support</a></p>
+                    <p><a href="#products">Product Catalog</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <p><a href="#contact">Contact</a></p>
+                    
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📍 </p>
+                    <p>📞 +213 559 37 35 21 /</p>
+                    <p>📧 info@ginie des eaux.dz</p>
+                    <p>⏰ Dim-Jeu : 8h-17h<br></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ginie des eaux. Cultiver l'avenir de l'agriculture algérienne par l'innovation et l'excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Page loading
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('pageLoader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('pageLoader').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Create floating particles in hero
+        function createParticles() {
+            const particlesContainer = document.getElementById('heroParticles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Enhanced scroll animations with Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Enhanced counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 100;
+
+            counters.forEach(counter => {
+                const animate = () => {
+                    const value = +counter.getAttribute('data-count');
+                    const data = +counter.innerText;
+                    const time = value / speed;
+                    
+                    if (data < value) {
+                        counter.innerText = Math.ceil(data + time);
+                        setTimeout(animate, 1);
+                    } else {
+                        counter.innerText = value;
+                        if (value === 99) counter.innerText = value + '%';
+                        else if (value >= 1000) counter.innerText = (value/1000).toFixed(1) + 'K+';
+                        else counter.innerText = value + '+';
+                    }
+                };
+                
+                const counterObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && !counter.classList.contains('animated')) {
+                            counter.classList.add('animated');
+                            animate();
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                counterObserver.observe(counter);
+            });
+        }
+
+        // Enhanced smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Enhanced navbar scroll effect
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+
+            // Hide/show navbar on scroll
+            if (scrollTop > lastScrollTop && scrollTop > 300) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // Enhanced form submission with validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const button = this.querySelector('.btn');
+            const originalContent = button.innerHTML;
+            
+            // Validation
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    field.style.borderColor = '#2e8b57';
+                }
+            });
+            
+            if (!isValid) {
+                button.innerHTML = '<span>❌</span><span>Please fill required fields</span>';
+                button.style.background = '#e74c3c';
+                setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    button.style.background = '';
+                }, 3000);
+                return;
+            }
+            
+            // Submit animation
+            button.innerHTML = '<span>⏳</span><span>Sending Message...</span>';
+            button.style.background = '#3cb371';
+            button.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                button.innerHTML = '<span>✅</span><span>Message Sent Successfully!</span>';
+                button.style.background = '#2e8b57';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalContent;
+                    button.style.background = '';
+                    button.disabled = false;
+                    this.reset();
+                    
+                    // Reset field borders
+                    requiredFields.forEach(field => {
+                        field.style.borderColor = '#e9ecef';
+                    });
+                }, 3000);
+            }, 2000);
+        });
+
+        // Mobile menu toggle (placeholder for future implementation)
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            // Mobile menu functionality would go here
+            console.log('Mobile menu clicked');
+        });
+
+        // Initialize animations
+        createParticles();
+        animateCounters();
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.service-card, .product-card, .testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = this.style.transform + ' scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = this.style.transform.replace(' scale(1.02)', '');
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroParticles = document.getElementById('heroParticles');
+            if (heroParticles) {
+                heroParticles.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+        let langData = {};
+
+  function changeLanguage(lang) {
+    fetch(`${lang}.json`)
+      .then(res => res.json())
+      .then(data => {
+        langData = data;
+        document.getElementsByTagName('body').innerText = langData.welcome;
+      });
+  }
+</script>
+    
+</body>
+</html>
