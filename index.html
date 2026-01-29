@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title src="./370373613_797782092353396_2662639367024582765_n.jpg">GINIE DES EAUX - Premium Agriculture & Irrigation Solutions</title>
+    <link rel="shortcut icon" href="https://i.ibb.co/nMMyk0SD/94e902af-4cd5-45f9-b32f-f60a6f9dfb9f.png" />
+    <title>GINIE DES EAUX - Premium Agriculture & Irrigation Solutions</title>
     <style>
         * {
             margin: 0;
@@ -29,6 +30,16 @@
             color: #333;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            transition: direction 0.3s ease;
+        }
+
+        /* RTL Support for Arabic */
+        body[dir="rtl"] {
+            direction: rtl;
+        }
+
+        body[dir="rtl"] .nav-links {
+            flex-direction: row-reverse;
         }
 
         /* Custom Scrollbar */
@@ -47,6 +58,39 @@
 
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(45deg, var(--secondary-green), var(--primary-green));
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: white;
+            color: #1a1a1a;
+            border: 2px solid var(--primary-green);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .lang-btn:hover {
+            background: var(--primary-green);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
+        }
+
+        .lang-btn.active {
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
         }
 
         /* Enhanced Navigation */
@@ -842,6 +886,101 @@
             z-index: 2;
         }
 
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-content h3 {
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        .about-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-green);
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-image {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .imagepro {
+            width: 300px;
+            height: 300px;
+            transition: transform 0.5s ease;
+            border-radius: 20px;
+        }
+        
+        .imagepro:hover {
+            transform: scale(1.03);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 5rem 0;
+            background: var(--light-bg);
+        }
+
+        .map-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .map-wrapper {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            height: 500px;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .location-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .mobile-menu-btn {
@@ -878,6 +1017,20 @@
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .language-switcher {
+                flex-wrap: wrap;
+                gap: 0.3rem;
+            }
+
+            .lang-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
             }
         }
 
@@ -943,68 +1096,33 @@
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
-        }.about {
-            padding: 6rem 0;
-            background-color: var(--light-gray);
-        }
-        
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-content h2 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-size: 2.2rem;
-            position: relative;
-        }
-        
-        .about-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent);
-        }
-        
-        .about-content p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-image {
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .about-image img {
-            width: 100%;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.03);
-        }
-        .imagepro {
-            width: 300px;
-            height: 300px;
-            transition: transform 0.5s ease;
-            border-radius: 20px;
-        }
-        
-        
-        
-        .imagepro:hover {
-            transform: scale(1.03);
         }
 
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -1016,31 +1134,37 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo"><img id="logo-img" src="./images/370373613_797782092353396_2662639367024582765_n.jpg" alt="">GROUPE GENIE DES EAUX </a>
+            <a href="#" class="logo">
+                <img id="logo-img" src="./images/370373613_797782092353396_2662639367024582765_n.jpg" alt="GINIE DES EAUX Logo">
+                GROUPE GENIE DES EAUX
+            </a>
 
             <ul class="nav-links">
                 <li><a href="#home" data-i18n="home">Maison</a></li>
-                <li><a href="#services"data-i18n="Services">Services</a></li>
-                <li><a href="#products"data-i18n="Products">Produits</a></li>
-                <li><a href=""data-i18n="shop">boutique</a></li>
-                <li><a href="#testimonials"data-i18n="Reviews">Avis</a></li>
-                <li><a href="#contact"data-i18n="Contact">Contact</a></li>
-                
+                <li><a href="#services" data-i18n="Services">Services</a></li>
+                <li><a href="#products" data-i18n="Products">Produits</a></li>
+                <li><a href="#" data-i18n="shop">boutique</a></li>
+                <li><a href="#testimonials" data-i18n="Reviews">Avis</a></li>
+                <li><a href="#contact" data-i18n="Contact">Contact</a></li>
             </ul>
+
+            <div class="language-switcher">
+                <span class="lang-btn" onclick="changeLanguage('en')">EN</span>
+                <span class="lang-btn active" onclick="changeLanguage('fr')">FR</span>
+                <span class="lang-btn" onclick="changeLanguage('ar')">AR</span>
+            </div>
+
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        
         <div class="hero-particles" id="heroParticles"></div>
         <div class="hero-content">
-            
             <div class="hc">
                 <h1 data-i18n="Transform">Transformez votre ferme grâce à l'irrigation intelligente</h1>
-                <p class="hero-subtitle"data-i18n="Advanced">L'argriculture irriguée doit produire plus de nourriture pour assurer la sécurite alimentaire dans l'algérie, mais en utilisant moins d'eau et moins de fonds. Ce défi nous impose à nous, acteurs de l'irrigation, de nous impliquer activement dans la gestion globale de l'eau </p>
-                
+                <p class="hero-subtitle" data-i18n="Advanced">L'argriculture irriguée doit produire plus de nourriture pour assurer la sécurite alimentaire dans l'algérie, mais en utilisant moins d'eau et moins de fonds. Ce défi nous impose à nous, acteurs de l'irrigation, de nous impliquer activement dans la gestion globale de l'eau</p>
                 
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">
@@ -1053,26 +1177,23 @@
                     </a>
                 </div>
             </div>
-            
         </div>
-        
     </section>
+
+    <!-- About Section -->
     <section class="about" id="about">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-content slide-in-left">
-                        <h3>À propos du GROUPE GENIE DES EAUX</h3>
-                        <p>Fondé en 2013,        
-                        le GROUPE GENIE DES EAUX réalise des installations complètes (pompes,filtration ,rèseaux,équipements,programateur,bassin en géomembrane....)adabtées aux besoins de chaque exploitant gràce à une équipe de techniciens expérimentés disposant de tous les moyens techniques nécessaire. </p>
-                        <p></p>
-                        <p></p>
-                        <a href="./about.html" class="btn btn-primary">En savoir plus</a>
-                    </div>
-                    <div class="about-image slide-in-right">
-                        <img src="./images/imagese.jfif" alt="Team at work">
-                    </div>
-                </div
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content slide-in-left">
+                    <h3>À propos du GROUPE GENIE DES EAUX</h3>
+                    <p>Fondé en 2013, le GROUPE GENIE DES EAUX réalise des installations complètes (pompes,filtration,rèseaux,équipements,programateur,bassin en géomembrane....)adabtées aux besoins de chaque exploitant gràce à une équipe de techniciens expérimentés disposant de tous les moyens techniques nécessaire.</p>
+                    <a href="./about.html" class="btn btn-primary">En savoir plus</a>
+                </div>
+                <div class="about-image slide-in-right">
+                    <img src="./images/imagese.jfif" alt="Team at work">
+                </div>
             </div>
+        </div>
     </section>
 
     <!-- Services Section -->
@@ -1084,8 +1205,6 @@
             </div>
             
             <div class="services-grid">
-                
-                
                 <div class="service-card fade-in">
                     <div class="service-icon">🏗️</div>
                     <h3>Bassin et infrastructures</h3>
@@ -1133,17 +1252,12 @@
                 <p class="section-subtitle" style="color: #ccc;">produit agriculteurs et de hidrolique</p>
             </div>
             <div class="products-grid">
-                <img class="imagepro" src="./images/unnamed.jpg" alt="">
-                <img class="imagepro" src="./images/1000001093.jpg" alt="">
-                <img class="imagepro" src="./images/1000001094.jpg" alt="">
-                <img class="imagepro" src="./images/unnamede.jpg" alt="">
+                <img class="imagepro" src="./images/unnamed.jpg" alt="Product 1">
+                <img class="imagepro" src="./images/1000001093.jpg" alt="Product 2">
+                <img class="imagepro" src="./images/1000001094.jpg" alt="Product 3">
+                <img class="imagepro" src="./images/unnamede.jpg" alt="Product 4">
             </div>
-            
-           
         </div>
-            
-            
-        
     </section>
 
     <!-- Testimonials Section -->
@@ -1151,16 +1265,16 @@
         <div class="container">
             <div class="section-header fade-in">
                 <h2 class="section-title">Ce que disent nos agriculteurs</h2>
-                <p class="section-subtitle">Résultats réels de vrais agriculteurs qui ont transformé leurs opérations avec SARL EHC</p>
+                <p class="section-subtitle">Résultats réels de vrais agriculteurs qui ont transformé leurs opérations avec GROUPE GENIE DES EAUX</p>
             </div>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">Le système d'irrigation intelligent de SARL EHC a augmenté le rendement de mes cultures de 35 % tout en réduisant ma consommation d'eau de 40 %. Le retour sur investissement a été incroyable : il a été rentabilisé en une seule saison !</p>
+                    <p class="testimonial-text">Le système d'irrigation intelligent de GROUPE GENIE DES EAUX a augmenté le rendement de mes cultures de 35 % tout en réduisant ma consommation d'eau de 40 %. Le retour sur investissement a été incroyable : il a été rentabilisé en une seule saison !</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">M</div>
+                        <div class="author-avatar">MJ</div>
                         <div class="author-info">
-                            <h4>Mohammed</h4>
+                            <h4>Mohammed Jilali</h4>
                             <span>Ferme de blé et d'orge, 150 hectares</span>
                         </div>
                     </div>
@@ -1169,20 +1283,20 @@
                 <div class="testimonial-card fade-in">
                     <p class="testimonial-text">La construction du bassin et le système de pompage automatisé ont transformé l'ensemble de nos activités. Plus besoin d'arrosage manuel ni de soucis liés au stress des cultures pendant les journées chaudes.</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
+                        <div class="author-avatar">MB</div>
                         <div class="author-info">
-                            <h4>ALI</h4>
+                            <h4>Mohammed belkhiri</h4>
                             <span>Ferme maraîchère, 80 hectares</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">« Un service professionnel du début à la fin. L'équipe a parfaitement compris nos besoins et a proposé une solution qui a dépassé nos attentes. Je recommande vivement ! »</p>
+                    <p class="testimonial-text">Un service professionnel du début à la fin. L'équipe a parfaitement compris nos besoins et a proposé une solution qui a dépassé nos attentes. Je recommande vivement !</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">K</div>
+                        <div class="author-avatar">KB</div>
                         <div class="author-info">
-                            <h4>Karim</h4>
+                            <h4>Karim Benali</h4>
                             <span>Agrumes, 200 hectares</span>
                         </div>
                     </div>
@@ -1190,8 +1304,6 @@
             </div>
         </div>
     </section>
-
-    
 
     <!-- Enhanced Contact Section -->
     <section id="contact" class="contact">
@@ -1211,7 +1323,7 @@
                             <div class="contact-detail-icon">📍</div>
                             <div>
                                 <strong>Visitez notre salle d'exposition</strong>
-                                <p></p>
+                                <p>Algérie</p>
                             </div>
                         </div>
                         
@@ -1229,7 +1341,7 @@
                             <div class="contact-detail-icon">📧</div>
                             <div>
                                 <strong>Envoyez-nous un e-mail</strong>
-                                <p>info@agroflow.dz</p>
+                                <p>info@giniedeseaux.dz</p>
                             </div>
                         </div>
                         
@@ -1280,8 +1392,7 @@
                         <div class="form-group">
                             <label for="cropType">Culture primaire</label>
                             <select id="cropType" name="cropType">
-                                <option value="">
-Sélectionnez le type de culture</option>
+                                <option value="">Sélectionnez le type de culture</option>
                                 <option value="cereals">Cereals (Wheat, Barley, Oats)</option>
                                 <option value="vegetables">Vegetables</option>
                                 <option value="fruits">Fruits & Citrus</option>
@@ -1319,65 +1430,152 @@ Sélectionnez le type de culture</option>
         </div>
     </section>
 
+    <!-- Location Map Section -->
+    <section class="map-section" id="location">
+        <div class="map-container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="location_title">Notre Emplacement</h2>
+                <p class="section-subtitle" data-i18n="location_subtitle">Visitez-nous à notre bureau en Algérie</p>
+            </div>
+
+            <div class="map-wrapper">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102511.97746348632!2d2.8766305!3d36.7525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128fb26977ea289b%3A0x7bfa8b6db07baf0d!2sAlgiers%2C%20Algeria!5e0!3m2!1sen!2s!4v1234567890123" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
     <!-- Enhanced Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>🌱 GINIE des EAUX</h3>
-                    <p>Fournisseur leader de solutions d'irrigation agricole intelligentes en Algérie. Depuis 2007, nous transformons les exploitations agricoles grâce à des technologies innovantes et un savoir-faire artisanal.</p>
+                    <p>Fournisseur leader de solutions d'irrigation agricole intelligentes en Algérie. Depuis 2013, nous transformons les exploitations agricoles grâce à des technologies innovantes et un savoir-faire artisanal.</p>
                     <div class="social-links">
-                        
-                        <a href="#" aria-label="GitHub"><i class="social-link"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="social-link"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="social-link"></i></a>
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Twitter">t</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                        <a href="#" class="social-link" aria-label="Instagram">ig</a>
+                        <a href="#" class="social-link" aria-label="TikTok">tk</a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
-                    <h3>Our Services</h3>
-                    <p><a href="#services">Smart Irrigation Systems</a></p>
-                    <p><a href="#services">Basin Construction</a></p>
-                    <p><a href="#services">Agricultural Tools</a></p>
+                    <h3>Nos Services</h3>
+                    <p><a href="#services">Systèmes d'irrigation intelligents</a></p>
+                    <p><a href="#services">Construction de bassins</a></p>
+                    <p><a href="#services">Outils agricoles</a></p>
                     <p><a href="#services">Maintenance & Support</a></p>
-                    <p><a href="#products">Product Catalog</a></p>
+                    <p><a href="#products">Catalogue de produits</a></p>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Support</h3>
                     <p><a href="#contact">Contact</a></p>
-                    
                 </div>
                 
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p>📍 </p>
-                    <p>📞 +213 559 37 35 21 /</p>
-                    <p>📧 info@ginie des eaux.dz</p>
-                    <p>⏰ Dim-Jeu : 8h-17h<br></p>
+                    <p>📍 Algérie</p>
+                    <p>📞 +213 559 37 35 21</p>
+                    <p>📧 info@giniedeseaux.dz</p>
+                    <p>⏰ Dim-Jeu : 8h-17h</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 ginie des eaux. Cultiver l'avenir de l'agriculture algérienne par l'innovation et l'excellence.</p>
+                <p>&copy; 2025 GINIE DES EAUX. Cultiver l'avenir de l'agriculture algérienne par l'innovation et l'excellence.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Page loading
-        window.addEventListener('load', function() {
+        // Translations
+        const translations = {
+            en: {
+                home: "Home",
+                Services: "Services",
+                Products: "Products",
+                shop: "Shop",
+                Reviews: "Reviews",
+                Contact: "Contact",
+                Transform: "Transform your farm with smart irrigation",
+                Advanced: "Irrigated agriculture must produce more food to ensure food security in Algeria, but using less water and less funds. This challenge requires us, irrigation actors, to actively engage in overall water management",
+                location_title: "Our Location",
+                location_subtitle: "Visit us at our office in Algeria"
+            },
+            fr: {
+                home: "Maison",
+                Services: "Services",
+                Products: "Produits",
+                shop: "boutique",
+                Reviews: "Avis",
+                Contact: "Contact",
+                Transform: "Transformez votre ferme grâce à l'irrigation intelligente",
+                Advanced: "L'argriculture irriguée doit produire plus de nourriture pour assurer la sécurite alimentaire dans l'algérie, mais en utilisant moins d'eau et moins de fonds. Ce défi nous impose à nous, acteurs de l'irrigation, de nous impliquer activement dans la gestion globale de l'eau",
+                location_title: "Notre Emplacement",
+                location_subtitle: "Visitez-nous à notre bureau en Algérie"
+            },
+            ar: {
+                home: "الرئيسية",
+                Services: "خدماتنا",
+                Products: "منتجات",
+                shop: "متجر",
+                Reviews: "آراء",
+                Contact: "اتصل بنا",
+                Transform: "حول مزرعتك بالري الذكي",
+                Advanced: "يجب على الزراعة المروية أن تنتج المزيد من الغذاء لضمان الأمن الغذائي في الجزائر، ولكن باستخدام كمية أقل من المياه والأموال. يفرض علينا هذا التحدي، نحن الفاعلين في مجال الري، المشاركة بنشاط في الإدارة الشاملة للمياه",
+                location_title: "موقعنا",
+                location_subtitle: "قم بزيارتنا في مكتبنا بالجزائر"
+            }
+        };
+
+        let currentLang = 'fr';
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update text direction for Arabic
+            if (lang === 'ar') {
+                document.body.setAttribute('dir', 'rtl');
+            } else {
+                document.body.setAttribute('dir', 'ltr');
+            }
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        // Page loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('pageLoader');
+            loader.style.opacity = '0';
             setTimeout(() => {
-                document.getElementById('pageLoader').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('pageLoader').style.display = 'none';
-                }, 500);
-            }, 1000);
+                loader.style.display = 'none';
+            }, 500);
         });
 
         // Create floating particles in hero
         function createParticles() {
             const particlesContainer = document.getElementById('heroParticles');
+            if (!particlesContainer) return;
+            
             const particleCount = 50;
             
             for (let i = 0; i < particleCount; i++) {
@@ -1487,79 +1685,73 @@ Sélectionnez le type de culture</option>
         });
 
         // Enhanced form submission with validation
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const button = this.querySelector('.btn');
-            const originalContent = button.innerHTML;
-            
-            // Validation
-            const requiredFields = this.querySelectorAll('[required]');
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    field.style.borderColor = '#e74c3c';
-                    isValid = false;
-                } else {
-                    field.style.borderColor = '#2e8b57';
-                }
-            });
-            
-            if (!isValid) {
-                button.innerHTML = '<span>❌</span><span>Please fill required fields</span>';
-                button.style.background = '#e74c3c';
-                setTimeout(() => {
-                    button.innerHTML = originalContent;
-                    button.style.background = '';
-                }, 3000);
-                return;
-            }
-            
-            // Submit animation
-            button.innerHTML = '<span>⏳</span><span>Sending Message...</span>';
-            button.style.background = '#3cb371';
-            button.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                button.innerHTML = '<span>✅</span><span>Message Sent Successfully!</span>';
-                button.style.background = '#2e8b57';
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
                 
+                const button = this.querySelector('.btn');
+                const originalContent = button.innerHTML;
+                
+                // Validation
+                const requiredFields = this.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = '#e74c3c';
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = '#2e8b57';
+                    }
+                });
+                
+                if (!isValid) {
+                    button.innerHTML = '<span>❌</span><span>Veuillez remplir les champs requis</span>';
+                    button.style.background = '#e74c3c';
+                    setTimeout(() => {
+                        button.innerHTML = originalContent;
+                        button.style.background = '';
+                    }, 3000);
+                    return;
+                }
+                
+                // Submit animation
+                button.innerHTML = '<span>⏳</span><span>Envoi du message...</span>';
+                button.style.background = '#3cb371';
+                button.disabled = true;
+                
+                // Simulate form submission
                 setTimeout(() => {
-                    button.innerHTML = originalContent;
-                    button.style.background = '';
-                    button.disabled = false;
-                    this.reset();
+                    button.innerHTML = '<span>✅</span><span>Message envoyé avec succès!</span>';
+                    button.style.background = '#2e8b57';
                     
-                    // Reset field borders
-                    requiredFields.forEach(field => {
-                        field.style.borderColor = '#e9ecef';
-                    });
-                }, 3000);
-            }, 2000);
-        });
+                    setTimeout(() => {
+                        button.innerHTML = originalContent;
+                        button.style.background = '';
+                        button.disabled = false;
+                        this.reset();
+                        
+                        // Reset field borders
+                        requiredFields.forEach(field => {
+                            field.style.borderColor = '#e9ecef';
+                        });
+                    }, 3000);
+                }, 2000);
+            });
+        }
 
-        // Mobile menu toggle (placeholder for future implementation)
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            // Mobile menu functionality would go here
-            console.log('Mobile menu clicked');
-        });
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                console.log('Mobile menu clicked');
+            });
+        }
 
         // Initialize animations
         createParticles();
         animateCounters();
-
-        // Add some interactive hover effects
-        document.querySelectorAll('.service-card, .product-card, .testimonial-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = this.style.transform + ' scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = this.style.transform.replace(' scale(1.02)', '');
-            });
-        });
 
         // Parallax effect for hero section
         window.addEventListener('scroll', () => {
@@ -1569,17 +1761,9 @@ Sélectionnez le type de culture</option>
                 heroParticles.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         });
-        let langData = {};
 
-  function changeLanguage(lang) {
-    fetch(`${lang}.json`)
-      .then(res => res.json())
-      .then(data => {
-        langData = data;
-        document.getElementsByTagName('body').innerText = langData.welcome;
-      });
-  }
-</script>
-    
+        // Initial language setup
+        changeLanguage(currentLang);
+    </script>
 </body>
 </html>
